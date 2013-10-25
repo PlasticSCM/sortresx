@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADDED_ITEM_CANNOT_BE_LOCKED">
+    <value>The item '{0}' cannot be locked because it's an added item. (Note: if the item doesn't appear as an added item then the workspace could be corrupted. Please, contact with support)</value>
+  </data>
+  <data name="ATT_NAME_FIELD">
+    <value>Attribute name</value>
+  </data>
+  <data name="ATTR_NOT_EXIST">
+    <value>The object type '{0}' is not valid on performed query.</value>
+  </data>
+  <data name="ATTR_TYPE_WRONG">
+    <value>The value '{0}' is not valid for field '{1}' on query "{2}". The field '{1}' type is '{3}'.</value>
+  </data>
+  <data name="ATTR_TYPE_WRONG_VALUE">
+    <value>The value '{0}' is not valid for field '{1}' on query "{2}". The field '{1}' must have one of the following values : {3}</value>
+  </data>
+  <data name="BR_NAME_FIELD">
+    <value>Branch name</value>
+  </data>
+  <data name="BRANCH_DOESNOTEXIST">
+    <value>Specified branch {0} does not exist</value>
+  </data>
+  <data name="BRANCH_PARENT_DOESNOTEXIST">
+    <value>Specified branch {0} has no parent</value>
+  </data>
+  <data name="BUSY_WORKSPACE">
+    <value>The workspace '{0}' is busy. Try later</value>
+  </data>
+  <data name="CANNOT_DO_CHANGE_EDITED_XLINK">
+    <value>Can't perform a checkout in an edited xlink.</value>
+  </data>
+  <data name="CANNOT_DO_CHANGE_READONLY_XLINK">
+    <value>It is not possible to modify items in a readonly xlink.</value>
+  </data>
+  <data name="CANNOT_DO_CHANGE_UNRESOLVED_XLINK">
+    <value>It is not possible to modify items inside an unresolved xlink.</value>
+  </data>
+  <data name="CANNOT_MERGE_MERGE_IN_PROGRESS">
+    <value>A new merge cannot be started because there is already a merge in progress. Finish it before starting a new one.
+In progress merge: {0} from cset {1}</value>
+  </data>
+  <data name="CANNOT_SWITCH_WITH_PENDING_CHANGES">
+    <value>Cannot perform the switch to branch/label/changeset since there are pending changes. Please review the pending changes and retry the operation again.</value>
+  </data>
+  <data name="CANNOT_UNDO_ADDED">
+    <value>Added '{0}' can't be undo because contains non-added changes</value>
+  </data>
+  <data name="CANNOT_UNDO_COPIED">
+    <value>A copied directory with content can't be undone</value>
+  </data>
+  <data name="CANNOT_UNDO_MOVED">
+    <value>The move from {0} to {1} can't be undone because {2} has been removed</value>
+  </data>
+  <data name="CANNOT_UPDATE_WITH_PENDING_CHANGES">
+    <value>The workspace cannot be updated since there are pending changes. Please review the pending changes and retry the operation again.</value>
+  </data>
+  <data name="CANNOT_UPDATE_WORKSPACE_CONTAINS_CHANGES">
+    <value>There aren't new changesets on your current configuration you can switch to. You've pending changes on your workspace. If you are trying to get latest changes, try to undo those changes instead of running update.</value>
+  </data>
+  <data name="CANT_ARCHIVE_AN_ALREADY_ARCHIVED_REVISION">
+    <value>Can't archive an already archived revision. {0}</value>
+  </data>
+  <data name="CANT_ARCHIVE_CHECKEDOUTREV">
+    <value>Can't archive a checked out revision. {0}</value>
+  </data>
+  <data name="CANT_ARCHIVE_DIRECTORY">
+    <value>Can't archive a directory. {0}</value>
+  </data>
+  <data name="CANT_ARCHIVE_FROM_DIFFERENT_REPOSITORIES">
+    <value>Can't archive revisions from different repositories on a single call</value>
+  </data>
+  <data name="CANT_FIND_DATA_FOR_ARCHIVED">
+    <value>Can't find data for any of the archived revisions you requested</value>
+  </data>
+  <data name="CANT_RENAME_ELEMENT_ALREADY_EXIST">
+    <value>Unable to rename "{0}" to "{1}" as an element with this name already exists</value>
+  </data>
+  <data name="CANT_RESTORE_NON_ARCHIVED_DATA">
+    <value>Can't restore data for {0} because it's not archived. If you're sure data has been archived for this revision, check if the server is resolving the archived data and disable it in order to restore</value>
+  </data>
+  <data name="CHANGE_MUST_BE_SELECTED">
+    <value>To select the change '{0}' the change '{1}' must be selected too.</value>
+  </data>
+  <data name="CHANGET_NOT_LOAD_ON_CONF">
+    <value>The changeset {0} is not loaded on the current workspace configuration.</value>
+  </data>
+  <data name="CLIENTCONF_WITH_ERRORS">
+    <value>The client configuration file "client.conf" contains errors: {0}</value>
+  </data>
+  <data name="CLOAKED_CANNOT_BE_DELETED">
+    <value>The item cannot be deleted '{0}' because it is cloaked.</value>
+  </data>
+  <data name="CLOAKED_DST_CANNOT_BE_MOVED">
+    <value>The item cannot be moved to '{0}' becuase '{0}' is cloaked.</value>
+  </data>
+  <data name="CLOAKED_SRC_CANNOT_BE_MOVED">
+    <value>The item cannot be moved '{0}' because it is cloaked.</value>
+  </data>
+  <data name="CMD_BAD_POSITION">
+    <value>The trigger position must be a whole number.</value>
+  </data>
+  <data name="COMMENT_FIELD">
+    <value>Comment</value>
+  </data>
+  <data name="COMP_METHOD_ERROR">
+    <value>{0} isn´t a vaild comparison method</value>
+  </data>
+  <data name="CONFLICT_CANNOT_BE_APPLIED">
+    <value>The conflict resolution cannot be applied because it depends on other conflict's resolution. Please, try to resolve conflicts in a different order. The conflict resolution returned the following error: {0}</value>
+  </data>
+  <data name="CONTENT_MUST_BE_UNDO_CHECKEDOUT">
+    <value>To perform the undo checkout operation over '{0}' its content must be undo checkout too.</value>
+  </data>
+  <data name="CSET_TREE_CANNOT_BE_LOADED">
+    <value>The changeset '{0}' content cannot be loaded.</value>
+  </data>
+  <data name="DAYS_AGO">
+    <value>{0} days ago</value>
+  </data>
+  <data name="DESTINATION_FIELD">
+    <value>Destination</value>
+  </data>
+  <data name="DESTINATION_MUST_BE_CHECKEDIN">
+    <value>The move source '{0}' can't be checkedin without check-in the destination '{1}'.</value>
+  </data>
+  <data name="DIFFTOOLS_UNCORRECT_DEFINED">
+    <value>Error in diff tool "{0}" execution. Diff tools in client.conf are incorrectly defined.</value>
+  </data>
+  <data name="DMNOTAVAILABLE_WITH_DIR">
+    <value>The dm command is available only to compare files, not directories.</value>
+  </data>
+  <data name="DUPLICATED_ITEM_ON_WK">
+    <value>This item is loaded twice at {0} and {1}. This can be the result of an incomplete 'move' operation. Please remove one of the two instances.</value>
+  </data>
+  <data name="ENCODING_ERROR">
+    <value>{0} isn't a valid text encoding</value>
+  </data>
+  <data name="ERROR_ARCHIVE_CANT_RETRIEVE_DATA">
+    <value>Can't retrieve archived volume, please configure the externalstorage.conf file with the right paths to locate the archived data. Base file name: {0}. Comment: {1}. File: {2}</value>
+  </data>
+  <data name="ERROR_CANT_IMPORT_INVALID_PACKAGE">
+    <value>Invalid replication package. No valid version signature found</value>
+  </data>
+  <data name="ERROR_CLIENTCONFIGNOTFOUND">
+    <value>Plastic SCM client is not correctly configured for current user: Client config file {0} not found. Please, execute 'clconfigureclient' to perform a text mode configuration or 'plastic --configure' for graphical mode.</value>
+  </data>
+  <data name="ERROR_DIFF_TYPE">
+    <value>Differences between items of different types cannot be calculated</value>
+  </data>
+  <data name="ERROR_EMPTY_SELECTOR">
+    <value>Selector cannot be empty.</value>
+  </data>
+  <data name="ERROR_MOVE_SRC_DST_EQUAL">
+    <value>Unable to move {0}. The source path and destiantion path are the same</value>
+  </data>
+  <data name="ERROR_NO_REPOSITORIES_FOUND">
+    <value>No repositories found on any server</value>
+  </data>
+  <data name="ERROR_REPLICATE_PACKAGE_DOESNT_EXIST">
+    <value>The package {0} doesn't exist</value>
+  </data>
+  <data name="ERROR_UPDATE_TRAILING_DOTS">
+    <value>Windows does not allow trailing dots on file names.</value>
+  </data>
+  <data name="FAIL_CONNECTION_SERVER">
+    <value>Connection to server {0} could not be established</value>
+  </data>
+  <data name="FIELD_TOO_LONG">
+    <value>{0} is too long. It has {1} and the maximun size is {2}</value>
+  </data>
+  <data name="FIND_NEED_REPOSITORIES">
+    <value>Not on workspace. "on repositories" clause is needed on the query.</value>
+  </data>
+  <data name="FORMATTER_ERROR">
+    <value>The field {0} not is not valid in the specified object type</value>
+  </data>
+  <data name="GENERIC_ERROR">
+    <value>An error has occurred on the server {0}</value>
+  </data>
+  <data name="GET_REVISION_DIRECTORY_NOT_SUPPORTED">
+    <value>GetRevision is not supported for directories. In order to get the contents of a directory, please load it in your workspace rules.</value>
+  </data>
+  <data name="HOURS_AGO">
+    <value>{0} hours ago</value>
+  </data>
+  <data name="INCOMPATIBLE_CMD_OPTIONS">
+    <value>Incompatible options: {0}.</value>
+  </data>
+  <data name="INCORREC_BRSPEC">
+    <value>Incorrect branch specification</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_ERROR_MULTIPLE_PATHS_FOR_REP">
+    <value>The selector isn't correctly defined. There are multiple paths rules for repository {0}.</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_MULTIPLE_RULES">
+    <value>The selector isn't correctly defined. There are multiple repository rules.</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_NO_RULE">
+    <value>The selector isn't correctly defined. There is no repository rule.</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_PARAM_INVALID_MOUNT_POINT">
+    <value>The selector isn't correctly defined. the repository {0} can't have a mount point ({1}).</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_PARAM_REP_DOESNTEXIST">
+    <value>The selector isn't correctly defined, the specified repository doesn't exist: {0}.</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_PARAM_REP_SERVER_CANNOT_BE_REACHED">
+    <value>The server ({0}) associated to the specified repository {1} can't be reached.</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_PARAM_REPNAME_CANT_BE_EMPTY">
+    <value>The selector isn't correctly defined, the repository name can't be empty.</value>
+  </data>
+  <data name="INCORRECTSPEC">
+    <value>Incorrect object specification {0}</value>
+  </data>
+  <data name="INSENSITIVE_DUPLICATED_ITEM">
+    <value>The items {0} and {1} can't be loaded at the same time on an insensitive file system. The item {0} is discarded.</value>
+  </data>
+  <data name="INVALID_CHARS_IN_NAME">
+    <value>{0} cannot contain any character of: 
+               {1}</value>
+  </data>
+  <data name="INVALID_FORMAT_STRING">
+    <value>Invalid format string</value>
+  </data>
+  <data name="INVALID_MERGESPEC">
+    <value>Invalid specification {0}</value>
+  </data>
+  <data name="INVALID_MOVE_DST_PRIV">
+    <value>Can't move a controled item to a private directory</value>
+  </data>
+  <data name="ITEM_ALREADY_EXISTS_ON_WK_WITH_DIFFERENT_TYPE_DIR">
+    <value>The item {0} already exists on workspace but is a directory instead of a file, so it can't be updated</value>
+  </data>
+  <data name="ITEM_ALREADY_EXISTS_ON_WK_WITH_DIFFERENT_TYPE_FILE">
+    <value>The item {0} already exists on workspace but is a file instead of a directory, so it can't be updated</value>
+  </data>
+  <data name="ITEM_CANNOT_BE_FOUND_ON_REP">
+    <value>The item '{0}' (ItemId:{1}) cannot be found on the repository '{2}'. You are probably working with an out-of-date workspace. Please, update it.</value>
+  </data>
+  <data name="ITEM_MUST_BE_UNDO_CHECKEDOUT">
+    <value>To perform the undo checkout operation over '{0}' the item '{1}' must be undo checkout too.</value>
+  </data>
+  <data name="ITEM_NAME_FIELD">
+    <value>Item name</value>
+  </data>
+  <data name="ITEM_PATH_FIELD">
+    <value>Item path</value>
+  </data>
+  <data name="ITEMS_LOCK_REQUIRE_HEAD">
+    <value>The specified files require exclusive checkout. Your workspace is not up-to-date (Current cset: {0}, Latest cset: {1}).
+To avoid merge conflicts, please update your workspace and try again.</value>
+  </data>
+  <data name="LOG_ON_PRIVATE_NOT_CS_REP">
+    <value>To execute log command on private path you need to specify a changeset full spec.</value>
+  </data>
+  <data name="LS_ITEM_NOT_FOUND">
+    <value>Can't resolve the selector for the item {0}</value>
+  </data>
+  <data name="LS_ITEM_NOT_FOUND_SELECTOR">
+    <value>Can't resolve the selector for the item {0}. Since you're specifying a custom selector remember you must use a path in 'repository format': use /src instead c:\myworkspace\src</value>
+  </data>
+  <data name="MAIN_BRANCHES_NOT_ALLOWED">
+    <value>Top-level branches are not allowed in this edition, only child branches can be created.</value>
+  </data>
+  <data name="MERGE_NEEDED">
+    <value>A merge is needed from changeset cs:{0}@rep:{2}@repserver:{3} to changeset cs:{1}@rep:{2}@repserver:{3} (the changeset you are currently loading) in order to checkin. The checkin operation cannot continue. It is necessary to solve the conflicts by merging your current workspace contents with the latest contents of the branch you are currently working on. Then, you can retry the checkin operation.</value>
+  </data>
+  <data name="MERGE_WITH_CHG_INSIDE_CLOAKED_NOT_ALLOWED">
+    <value>The merge operation is not allowed with pending cloaked changes. Please, confirm or undo the pending changes first.</value>
+  </data>
+  <data name="MERGETOOLS_UNCORRECT_DEFINED">
+    <value>Error in merge tool "{0}" execution. Merge tools in client.conf are incorrectly defined.</value>
+  </data>
+  <data name="MERGETYPE_ERROR">
+    <value>{0} isn't a valid merge resolution type</value>
+  </data>
+  <data name="MINUTES_AGO">
+    <value>{0} minutes ago</value>
+  </data>
+  <data name="MK_NAME_FIELD">
+    <value>Label name</value>
+  </data>
+  <data name="MKBRANCH_PARENTNOTFOUND">
+    <value>The parent branch {0} was not found on the repository server</value>
+  </data>
+  <data name="MULTIPLE_WORKSPACE_NOT_ALLOWED">
+    <value>The {0} operation cannot be executed using items from different workspaces. Please, retry the operation with the items of each workspace.</value>
+  </data>
+  <data name="MUST_BE_ON_SAME_REP">
+    <value>{0} and {1} must be on the same repository to perform the operation</value>
+  </data>
+  <data name="NO_CONTENT_TO_COMPARE">
+    <value>There is no content to compare.</value>
+  </data>
+  <data name="NO_CSHARP_FILE">
+    <value>Only C# files are allowed to show the method history.</value>
+  </data>
+  <data name="NO_DIFFTOOL_DEFINED">
+    <value>There aren't any diff tools defined in the client configuration file</value>
+  </data>
+  <data name="NO_MERGES_IN_PROGRESS">
+    <value>No hay merges en progreso en espacio de trabajo '{0}'.</value>
+  </data>
+  <data name="NO_MERGETOOL_DEFINED">
+    <value>There aren't any merge tools defined in the client configuration file</value>
+  </data>
+  <data name="NO_METHOD_FOUND">
+    <value>No method has been found to show the history.</value>
+  </data>
+  <data name="NO_PATH_BETWEEN_CSETS">
+    <value>There is no path between '{0}' and '{1}'.</value>
+  </data>
+  <data name="NOT_CHANGE">
+    <value>The {0} is not a change</value>
+  </data>
+  <data name="NOT_DEFINED_FS_PROTECTION">
+    <value>NOT_DEFINED</value>
+  </data>
+  <data name="OBJECT_NAME_FIELD">
+    <value>Object name</value>
+  </data>
+  <data name="ONLY_ONE_REP_RULE_BY_REP">
+    <value>Invalid selector. There are more than one repository rule for repository '{0}', only one repository rule by repository is allowed.</value>
+  </data>
+  <data name="PARSER_ERROR">
+    <value>Query error: {0}</value>
+  </data>
+  <data name="PARSER_NULL_ERROR">
+    <value>An error was found on the query</value>
+  </data>
+  <data name="PENDING_DIRECTORY_CONFLICTS">
+    <value>There are {0} directory conflict(s) that must be resolved before processing the merge.</value>
+  </data>
+  <data name="PRIV_DIR_DIFF">
+    <value>Differences between private directories are not available</value>
+  </data>
+  <data name="PROFILE_NAME_ALREADY_EXISTS">
+    <value>The profile name already exists</value>
+  </data>
+  <data name="REP_NAME_FIELD">
+    <value>Repository name</value>
+  </data>
+  <data name="REVDATANOTFOUND_FOR_SPEC">
+    <value>No data found for the given revision specification</value>
+  </data>
+  <data name="REVERT_TO_CURRENT_REV">
+    <value>The specified revision '{0}' is the current one, revert is not needed.</value>
+  </data>
+  <data name="REVIEW_NAME_FIELD">
+    <value>The title for the code review</value>
+  </data>
+  <data name="SECONDS_AGO">
+    <value>{0} seconds ago</value>
+  </data>
+  <data name="SHELVE_DOESNTEXIST">
+    <value>The specified shelve {0} does not exist.</value>
+  </data>
+  <data name="SHELVE_ID_GREATER_THAN_ZERO">
+    <value>The shelve id must be an integer greater than zero</value>
+  </data>
+  <data name="SWITCH_SELECTOR_ERROR_MULTIPLE_PATHS_IN_RULE">
+    <value>There are multiple paths rules for repository {0}. Can't switch selector automatically</value>
+  </data>
+  <data name="SWITCH_SELECTOR_ERROR_NO_REP_FOUND">
+    <value>Current workspace selector doesn't contain any rule for repository {0}</value>
+  </data>
+  <data name="SWITCH_SELECTOR_ERROR_NO_REP_FOUND_ONLY_ONE_RULE">
+    <value>Current workspace selector doesn't contain any rule for repository {0}</value>
+  </data>
+  <data name="SWITCH_SELECTOR_ERROR_OBJECTS_ON_SAME_REP">
+    <value>More than one branch or label selected for the same repository</value>
+  </data>
+  <data name="TRIGGER_NAME_FIELD">
+    <value>Trigger name</value>
+  </data>
+  <data name="TYPE_NOT_EXISTS">
+    <value>The object type {0} doesn't exist</value>
+  </data>
+  <data name="UNABLE_TO_OPEN">
+    <value>Unable to open URL: </value>
+  </data>
+  <data name="UNREACHABLE_SERVER">
+    <value>The server '{0}' is unreachable.</value>
+  </data>
+  <data name="UP_PASSWORD_CORRUPT">
+    <value>Parameter 'password' is corrupt in the client config file.</value>
+  </data>
+  <data name="UPDATE_WK_CONTENT_ERROR">
+    <value>The content of the workspace '{0}' cannot be updated due to the following error: {1}</value>
+  </data>
+  <data name="USING_DEFAULT_CONFIGURATION">
+    <value>Using default configuration</value>
+  </data>
+  <data name="WK_NAME_FIELD">
+    <value>Workspace name</value>
+  </data>
+  <data name="WK_PATH_FIELD">
+    <value>Workspace path</value>
+  </data>
+  <data name="WKTREE_CORRUPT">
+    <value>The workspace '{0}' metadata is corrupt. Please, update the workspace.</value>
+  </data>
+  <data name="WORKSPACE_PATH_NOT_RESOLVED">
+    <value>The workspace path of the item {0} cannot be resolved.</value>
+  </data>
+  <data name="WORKSPACE_WITH_CHANGES_APPLING_LABEL">
+    <value>Workspace contains changes. Labels can't be applied if there are pending changes on the current workspace.</value>
+  </data>
+  <data name="WRONG_CONFLICT_TO_RESOLVE">
+    <value>'{0}' is not a valid conflict to resolve.</value>
+  </data>
+  <data name="WRONG_PERCENT_VALUE">
+    <value>The value '{0}' is not a valid percent.</value>
+  </data>
+  <data name="WRONG_RESOLUTION_INFO">
+    <value>'{0}' is not a valid resolution info for resolution '{1}'.</value>
+  </data>
+  <data name="WRONG_RESOLUTION_OPTION">
+    <value>'{0}' is not a valid resolution.</value>
+  </data>
+  <data name="XLINK_CSET_NOT_FOUND">
+    <value>Cannot find the cset specified on the xlink {0}</value>
+  </data>
+</root>

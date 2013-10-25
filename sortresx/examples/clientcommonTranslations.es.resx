@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADDED_ITEM_CANNOT_BE_LOCKED">
+    <value>El ítem '{0}' no se puede bloquear porque es un añadido. (Nota: si el ítem no le aparece como añadido entonces el espacio de trabajo podría estar corrupto. Por favor, contacte con soporte)</value>
+  </data>
+  <data name="ATT_NAME_FIELD">
+    <value>El nombre del atributo</value>
+  </data>
+  <data name="ATTR_NOT_EXIST">
+    <value>El tipo de objeto '{0}' no es valido en la consulta realizada.</value>
+  </data>
+  <data name="ATTR_TYPE_WRONG">
+    <value>El valor '{0}' no es valido para el campo '{1}' en la consulta "{2}". El campo '{1}' es de tipo '{3}'.</value>
+  </data>
+  <data name="ATTR_TYPE_WRONG_VALUE">
+    <value>El valor '{0}' no es valido para el campo '{1}' en la consulta "{2}". El campo '{1}' admite un valor de los siguientes: {3}</value>
+  </data>
+  <data name="BR_NAME_FIELD">
+    <value>El nombre de la rama</value>
+  </data>
+  <data name="BRANCH_DOESNOTEXIST">
+    <value>La rama especificada {0} no existe</value>
+  </data>
+  <data name="BRANCH_PARENT_DOESNOTEXIST">
+    <value>La rama especificada {0} no tiene ningún padre</value>
+  </data>
+  <data name="BUSY_WORKSPACE">
+    <value>El espacio de trabajo '{0}' está actualmente ocupado. Pruebe más adelante.</value>
+  </data>
+  <data name="CANNOT_DO_CHANGE_EDITED_XLINK">
+    <value>No se puede llevar a cabo la operación de checkout en un xlink editado.</value>
+  </data>
+  <data name="CANNOT_DO_CHANGE_READONLY_XLINK">
+    <value>No es posible modificar los elementos de un xlink de sólo lectura.</value>
+  </data>
+  <data name="CANNOT_DO_CHANGE_UNRESOLVED_XLINK">
+    <value>No es posible modificar los elementos dentro de un xlink que no se pudo resolver.</value>
+  </data>
+  <data name="CANNOT_MERGE_MERGE_IN_PROGRESS">
+    <value>Un nuevo merge no puede empezar porque hay ya un merge en progreso: Finalízalo antes de iniciar uno nuevo.
+Merge en progreso: {0} desde el changeset {1}</value>
+  </data>
+  <data name="CANNOT_SWITCH_WITH_PENDING_CHANGES">
+    <value>No se puede cambiar de rama/etiqueta/changeset porque hay cambios pendientes. Por favor, revise dichos cambios e intente de nuevo la operación.</value>
+  </data>
+  <data name="CANNOT_UNDO_ADDED">
+    <value>No puede deshacerse el añadido '{0}' porque contiene cambios no añadidos</value>
+  </data>
+  <data name="CANNOT_UNDO_COPIED">
+    <value>No puede deshacerse el copiado de un directorio con contenido</value>
+  </data>
+  <data name="CANNOT_UNDO_MOVED">
+    <value>No puede deshacerse el movido desde {0} a {1} porque {2} ha sido borrado</value>
+  </data>
+  <data name="CANNOT_UPDATE_WITH_PENDING_CHANGES">
+    <value>No se puede actualizar el espacio de trabajo porque hay cambios pendientes. Por favor, revise dichos cambios e intente de nuevo la operación.</value>
+  </data>
+  <data name="CANT_ARCHIVE_AN_ALREADY_ARCHIVED_REVISION">
+    <value>No se puede archivar una revisión que ya está archivada. {0}</value>
+  </data>
+  <data name="CANT_ARCHIVE_CHECKEDOUTREV">
+    <value>No se puede archivar una revisión en checkout. {0}</value>
+  </data>
+  <data name="CANT_ARCHIVE_DIRECTORY">
+    <value>No se puede archivar un directorio. {0}</value>
+  </data>
+  <data name="CANT_ARCHIVE_FROM_DIFFERENT_REPOSITORIES">
+    <value>No se pueden archivar revisiones de diferentes repositorios en una única llamada</value>
+  </data>
+  <data name="CANT_FIND_DATA_FOR_ARCHIVED">
+    <value>No se han podido encontrar datos para ninguna de las revisiones archivadas que ha solicitado</value>
+  </data>
+  <data name="CANT_RENAME_ELEMENT_ALREADY_EXIST">
+    <value>No se puede renombrar el elemento "{0}" con el nombre "{1}" porque ya existe otro elemento con ese nombre</value>
+  </data>
+  <data name="CANT_RESTORE_NON_ARCHIVED_DATA">
+    <value>No se pueden restaurar los datos para {0} porque esa revisión no está archivada. Si está seguro de que los datos para esa revisión han sido archivados, compruebe la configuración del servidor, si el servidor está resolviendo los datos archivados no podrá realizar la restauración</value>
+  </data>
+  <data name="CHANGE_MUST_BE_SELECTED">
+    <value>Para seleccionar el cambio '{0}' el cambio '{1}' debe ser seleccionado también.</value>
+  </data>
+  <data name="CHANGET_NOT_LOAD_ON_CONF">
+    <value>El changeset {0} no se puede cargar con la configuración actual del espacio de trabajo.</value>
+  </data>
+  <data name="CLIENTCONF_WITH_ERRORS">
+    <value>El fichero de configuración de cliente client.conf contiene errores: {0}</value>
+  </data>
+  <data name="CLOAKED_CANNOT_BE_DELETED">
+    <value>No se puede borrar '{0}' porque está cloaked.</value>
+  </data>
+  <data name="CLOAKED_DST_CANNOT_BE_MOVED">
+    <value>No se puede mover a '{0}' porque '{0}' está cloaked.</value>
+  </data>
+  <data name="CLOAKED_SRC_CANNOT_BE_MOVED">
+    <value>No se puede mover '{0}' porque está cloaked.</value>
+  </data>
+  <data name="CMD_BAD_POSITION">
+    <value>La posición del trigger debe ser un entero positivo.</value>
+  </data>
+  <data name="COMMENT_FIELD">
+    <value>El comentario</value>
+  </data>
+  <data name="COMP_METHOD_ERROR">
+    <value>{0} no es un método de comparación válido</value>
+  </data>
+  <data name="CONFLICT_CANNOT_BE_APPLIED">
+    <value>La resolución del conflicto no puede aplicarse porque depende de la resolución de otros conflictos. Por favor, intente resolver los conflictos en otro orden. La resolución del conflicto devolvió el siguiente error: {0}</value>
+  </data>
+  <data name="CONTENT_MUST_BE_UNDO_CHECKEDOUT">
+    <value>Para deshacer la desprotección sobre '{0}' en su contenido debe ser deshecha también.</value>
+  </data>
+  <data name="CSET_TREE_CANNOT_BE_LOADED">
+    <value>No se ha podido cargar el contenido del changeset '{0}'.</value>
+  </data>
+  <data name="DAYS_AGO">
+    <value>hace {0} días</value>
+  </data>
+  <data name="DESTINATION_FIELD">
+    <value>La ruta de destino</value>
+  </data>
+  <data name="DESTINATION_MUST_BE_CHECKEDIN">
+    <value>El movido origen '{0}' no puede ser protegido si el destino '{1}' no está protegido.</value>
+  </data>
+  <data name="DIFFTOOLS_UNCORRECT_DEFINED">
+    <value>Error en la ejecución de la herramineta de differencias "{0}". Las herramientas de differencias están mal definidas en el client.conf.</value>
+  </data>
+  <data name="DMNOTAVAILABLE_WITH_DIR">
+    <value>El comando dm no puede utilizarse con directorios, sino con rutas de ficheros o especificaciones de ficheros.</value>
+  </data>
+  <data name="DUPLICATED_ITEM_ON_WK">
+    <value>Este elemento está cargado dos veces, en {0} y en {1}. Esto puede ser el resultado de una operación de movido que no ha sido completada. Por favor elimine uno de los dos.</value>
+  </data>
+  <data name="ENCODING_ERROR">
+    <value>{0} no es una codificación de texto válida</value>
+  </data>
+  <data name="ERROR_ARCHIVE_CANT_RETRIEVE_DATA">
+    <value>No se puede obtener el volumen externo de almacenamiento de datos, por favor configure externalstorage.conf con los paths adecuados para encontrar los volúmenes archivados. Nombre base de fichero: {0}. Comentario de volumen: {1}. Fichero: {2}</value>
+  </data>
+  <data name="ERROR_CANT_IMPORT_INVALID_PACKAGE">
+    <value>Paquete de replicación incorrecto, no se ha encontrado una cabecera válida</value>
+  </data>
+  <data name="ERROR_CLIENTCONFIGNOTFOUND">
+    <value>El cliente Plastic SCM no está configurado correctamente para el usuario actual: No se ha encontrado el fichero de configuración {0}. Ejecute 'clconfigureclient' para realizar una configuración en modo texto o 'plastic --configure' para realizarla en modo gráfico.</value>
+  </data>
+  <data name="ERROR_DIFF_TYPE">
+    <value>No se pueden mostrar diferencias entre elementos de distinto tipo</value>
+  </data>
+  <data name="ERROR_EMPTY_SELECTOR">
+    <value>El selector no puede estar vacio.</value>
+  </data>
+  <data name="ERROR_MOVE_SRC_DST_EQUAL">
+    <value>No se puede mover {0}. La ruta de origen y la de destino son la misma.</value>
+  </data>
+  <data name="ERROR_NO_REPOSITORIES_FOUND">
+    <value>No se han encontrado repositorios en ningún servidor</value>
+  </data>
+  <data name="ERROR_REPLICATE_PACKAGE_DOESNT_EXIST">
+    <value>El paquete de replicación {0} no existe</value>
+  </data>
+  <data name="ERROR_UPDATE_TRAILING_DOTS">
+    <value>Windows no permite puntos al final de los nombres.</value>
+  </data>
+  <data name="FIELD_TOO_LONG">
+    <value> {0} es demasiado grande, tiene {1} caracteres y el tamaño máximo es de {2}</value>
+  </data>
+  <data name="FIND_NEED_REPOSITORIES">
+    <value>Fuera de un espacio de trabajo es necesario especificar los repositiorios en la consulta con "on repositories".</value>
+  </data>
+  <data name="FORMATTER_ERROR">
+    <value>El campo {0} no es válido para el tipo de objeto especificado</value>
+  </data>
+  <data name="GENERIC_ERROR">
+    <value>Se ha producido un error en el servidor {0}</value>
+  </data>
+  <data name="HOURS_AGO">
+    <value>hace {0} horas</value>
+  </data>
+  <data name="INCOMPATIBLE_CMD_OPTIONS">
+    <value>Opciones de comando incompatibles: {0}.</value>
+  </data>
+  <data name="INCORREC_BRSPEC">
+    <value>Especificación de rama incorrecta</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_ERROR_MULTIPLE_PATHS_FOR_REP">
+    <value>El selector no está correctamente definido, existen múltiples reglas de path para el repositorio {0}.</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_MULTIPLE_RULES">
+    <value>El selector no está correctamente definido, existen múltiples reglas de repositorio.</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_NO_RULE">
+    <value>El selector no está correctamente definido, no existe una regla de repositorio.</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_PARAM_INVALID_MOUNT_POINT">
+    <value>El selector no está correctamente definido, el repositorio {0} no puede tener un punto de montaje ({1}).</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_PARAM_REP_DOESNTEXIST">
+    <value>El selector no está correctamente definido, el repositorio especificado no existe: {0}.</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_PARAM_REP_SERVER_CANNOT_BE_REACHED">
+    <value>No se puede localizar el servidor ({0}) asociado al repositorio especificado {1}.</value>
+  </data>
+  <data name="INCORRECT_SELECTOR_PARAM_REPNAME_CANT_BE_EMPTY">
+    <value>El selector no está corrrectamente definido, el nombre de repositorio no puede estar vacío.</value>
+  </data>
+  <data name="INCORRECTSPEC">
+    <value>Especificación de objeto incorrecta: {0}</value>
+  </data>
+  <data name="INSENSITIVE_DUPLICATED_ITEM">
+    <value>Los elementos {0} y {1} no se pueden cargar a la vez en un sistema de ficheros insensitivo. El elemento {0} es descartado.</value>
+  </data>
+  <data name="INVALID_CHARS_IN_NAME">
+    <value>{0} no puede contener ninguno de los siguientes caracteres: 
+               {1}</value>
+  </data>
+  <data name="INVALID_FORMAT_STRING">
+    <value>Cadena de formato incorrecta</value>
+  </data>
+  <data name="INVALID_MERGESPEC">
+    <value>Especificación no válida: {0}</value>
+  </data>
+  <data name="INVALID_MOVE_DST_PRIV">
+    <value>No se puede mover un elemento controlado a un directorio privado.</value>
+  </data>
+  <data name="ITEM_ALREADY_EXISTS_ON_WK_WITH_DIFFERENT_TYPE_DIR">
+    <value>El elemento {0} ya existe en el workspace pero pero es un directorio en lugar de un fichero, por tanto no puede ser actualizado</value>
+  </data>
+  <data name="ITEM_ALREADY_EXISTS_ON_WK_WITH_DIFFERENT_TYPE_FILE">
+    <value>El elemento {0} ya existe en el workspace pero es un fichero en lugar de un directorio, por tanto no puede ser actualizado</value>
+  </data>
+  <data name="ITEM_CANNOT_BE_FOUND_ON_REP">
+    <value>No se puede encontrar el ítem '{0}' (ItemId:{1}) en el repositorio '{2}'. Probablemente esté trabajando con un espacio de trabajo desactualizado. Por favor, actualícelo.</value>
+  </data>
+  <data name="ITEM_MUST_BE_UNDO_CHECKEDOUT">
+    <value>Para deshacer la desprotección sobre '{0}' en el elemento '{1}' debe ser deshecha también.</value>
+  </data>
+  <data name="ITEM_NAME_FIELD">
+    <value>El nombre del ítem</value>
+  </data>
+  <data name="ITEM_PATH_FIELD">
+    <value>La ruta del ítem</value>
+  </data>
+  <data name="ITEMS_LOCK_REQUIRE_HEAD">
+    <value>Los ficheros especificados requiren checkout exclusivo. Su workspace no está al día (Cset actual: {0}, último changeset: {1}).
+Para evitar conflictos de merge, por favor, actualice su workspace e intente la operación de nuevo.</value>
+  </data>
+  <data name="LOG_ON_PRIVATE_NOT_CS_REP">
+    <value>Para ejecutar el comando log en una ruta privada es necesario especificar una especificación de changeset completa.</value>
+  </data>
+  <data name="LS_ITEM_NOT_FOUND">
+    <value>No se ha podido resolver el selector para el ítem {0}</value>
+  </data>
+  <data name="LS_ITEM_NOT_FOUND_SELECTOR">
+    <value>No se ha podido resolver el selector para el ítem {0}. Como está especificando un selector, recuerde que los paths deben estar en formato 'repositorio', es decir, use /src en lugar de c:\myworkspace\src</value>
+  </data>
+  <data name="MAIN_BRANCHES_NOT_ALLOWED">
+    <value>Las ramas de primer nivel no están permitidas en esta edición, solamente pueden crearse ramas hijas.</value>
+  </data>
+  <data name="MERGE_NEEDED">
+    <value>Se necesitan combinar los cambios del changeset cs:{0}@rep:{2}@repserver:{3} con los cambios realizados sobre el changeset cs:{1}@rep:{2}@repserver:{3} (changeset cargado en su workspace) antes de continuar. Es necesario resolver los conflictos mezclando los contenidos de su workspace con los últimos contenidos de la rama en la que está actualmente trabajando. Después de eso, reintente la operación de protección.</value>
+  </data>
+  <data name="MERGE_WITH_CHG_INSIDE_CLOAKED_NOT_ALLOWED">
+    <value>La operación de merge no está permitida con cambios pendientes entre los cloaked. Por favor, confirme o deshaga los cambios pendientes primero.</value>
+  </data>
+  <data name="MERGETOOLS_UNCORRECT_DEFINED">
+    <value>Error en la ejecución de la herramineta de merge "{0}". Las herramientas de merge están mal definidas en el client.conf.</value>
+  </data>
+  <data name="MERGETYPE_ERROR">
+    <value>{0} no es un método de resolución de merge válido</value>
+  </data>
+  <data name="MINUTES_AGO">
+    <value>hace {0} minutos</value>
+  </data>
+  <data name="MK_NAME_FIELD">
+    <value>El nombre de la etiqueta</value>
+  </data>
+  <data name="MKBRANCH_PARENTNOTFOUND">
+    <value>No se ha podido encontrar la rama padre {0} en el servidor</value>
+  </data>
+  <data name="MULTIPLE_WORKSPACE_NOT_ALLOWED">
+    <value>La operación de {0} no puede ejecutarse con ítems de varios workspaces. Por favor, repita la operación por separado con los ítems de cada workspace.</value>
+  </data>
+  <data name="MUST_BE_ON_SAME_REP">
+    <value>{0} y {1} tienen que estar en el mismo repositorio para poder realizar la operación.</value>
+  </data>
+  <data name="NO_CONTENT_TO_COMPARE">
+    <value>No hay contenido para comparar.</value>
+  </data>
+  <data name="NO_CSHARP_FILE">
+    <value>Sólo se permite mostrar la historia del método para ficheros de C#.</value>
+  </data>
+  <data name="NO_DIFFTOOL_DEFINED">
+    <value>No hay ninguna herramienta de diferencias definida en el fichero de configuración</value>
+  </data>
+  <data name="NO_MERGETOOL_DEFINED">
+    <value>No hay ninguna herramienta de merge definida en el fichero de configuración</value>
+  </data>
+  <data name="NO_METHOD_FOUND">
+    <value>No se ha encontrado ningún método sobre el que mostrar la historia.</value>
+  </data>
+  <data name="NO_PATH_BETWEEN_CSETS">
+    <value>No hay un camino entre '{0}' y '{1}'.</value>
+  </data>
+  <data name="NO_PENDING_MERGES">
+    <value>There are not merges in progress on workspace '{0}'.</value>
+  </data>
+  <data name="NOT_CHANGE">
+    <value>{0} no es un cambio</value>
+  </data>
+  <data name="NOT_DEFINED_FS_PROTECTION">
+    <value>NO_DEFINIDOS</value>
+  </data>
+  <data name="OBJECT_NAME_FIELD">
+    <value>El nombre del objeto</value>
+  </data>
+  <data name="ONLY_ONE_REP_RULE_BY_REP">
+    <value>El selector no es valido. Hay más de una regla de reposipositorio para el repositorio '{0}', sólo esta permitida una regla de repositorio por repositorio.</value>
+  </data>
+  <data name="PARSER_ERROR">
+    <value>Error en la consulta: {0}</value>
+  </data>
+  <data name="PARSER_NULL_ERROR">
+    <value>La consulta especificada contiene errores</value>
+  </data>
+  <data name="PENDING_DIRECTORY_CONFLICTS">
+    <value>Hay {0} conflictos de directorio que deben ser resueltos antes de procesar el merge.</value>
+  </data>
+  <data name="PRIV_DIR_DIFF">
+    <value>No se soportan diferencias entre directorios privados</value>
+  </data>
+  <data name="PROFILE_NAME_ALREADY_EXISTS">
+    <value>El nombre del perfil ya existe</value>
+  </data>
+  <data name="REP_NAME_FIELD">
+    <value>El nombre del repositorio</value>
+  </data>
+  <data name="REVDATANOTFOUND_FOR_SPEC">
+    <value>No se han encontrado datos para la especificación dada</value>
+  </data>
+  <data name="REVERT_TO_CURRENT_REV">
+    <value>La revisión especificada '{0}' es la actual, el revert no es necesario.</value>
+  </data>
+  <data name="REVIEW_NAME_FIELD">
+    <value>El título para la revisión de código</value>
+  </data>
+  <data name="SECONDS_AGO">
+    <value>hace {0} segundos</value>
+  </data>
+  <data name="SHELVE_DOESNTEXIST">
+    <value>El shelve {0} especificado no existe.</value>
+  </data>
+  <data name="SHELVE_ID_GREATER_THAN_ZERO">
+    <value>El identificador de shelve debe ser un número entero mayor que cero.</value>
+  </data>
+  <data name="SWITCH_SELECTOR_ERROR_MULTIPLE_PATHS_IN_RULE">
+    <value>Existen múltiples reglas de path para el repositorio {0}. No se puede cambiar el selector sin editarlo</value>
+  </data>
+  <data name="SWITCH_SELECTOR_ERROR_NO_REP_FOUND">
+    <value>El selector del workspace actual no tiene ninguna regla para el repositorio {0}</value>
+  </data>
+  <data name="SWITCH_SELECTOR_ERROR_NO_REP_FOUND_ONLY_ONE_RULE">
+    <value>El selector del workspace actual no tiene ninguna regla para el repositorio {0}</value>
+  </data>
+  <data name="SWITCH_SELECTOR_ERROR_OBJECTS_ON_SAME_REP">
+    <value>Se ha seleccionado más de una rama o etiqueta para el mismo repositorio</value>
+  </data>
+  <data name="TRIGGER_NAME_FIELD">
+    <value>El nombre del trigger</value>
+  </data>
+  <data name="TYPE_NOT_EXISTS">
+    <value>El tipo de objeto {0} no existe</value>
+  </data>
+  <data name="UNABLE_TO_OPEN">
+    <value>No se pudo abrir la URL: </value>
+  </data>
+  <data name="UNREACHABLE_SERVER">
+    <value>El servidor '{0}' no es alcanzable.</value>
+  </data>
+  <data name="UP_PASSWORD_CORRUPT">
+    <value>El parámetro 'password' es incorrecto en el fichero de configuración del cliente.</value>
+  </data>
+  <data name="UPDATE_WK_CONTENT_ERROR">
+    <value>El contenido del espacio de trabajo '{0}' no ha podido actualizarse debido al siguiente error: {1}</value>
+  </data>
+  <data name="USING_DEFAULT_CONFIGURATION">
+    <value>Usando la configuración por defecto</value>
+  </data>
+  <data name="WK_NAME_FIELD">
+    <value>El nombre del workspace</value>
+  </data>
+  <data name="WK_PATH_FIELD">
+    <value>La ruta del workspace</value>
+  </data>
+  <data name="WKTREE_CORRUPT">
+    <value>Los metadatos del workspace '{0}' están corruptos. Por favor, actualize el workspace.</value>
+  </data>
+  <data name="WORKSPACE_PATH_NOT_RESOLVED">
+    <value>La ruta del workspace para el ítem {0} no pudo ser resuelta.</value>
+  </data>
+  <data name="WORKSPACE_WITH_CHANGES_APPLING_LABEL">
+    <value>El workspace contiene cambios. Una etiqueta no se puede aplicar si existen cambios pendientes en el workspace.</value>
+  </data>
+  <data name="WRONG_CONFLICT_TO_RESOLVE">
+    <value>'{0}' no es un conflicto válido para resolver.</value>
+  </data>
+  <data name="WRONG_PERCENT_VALUE">
+    <value>El valor '{0}' no es un porcentaje valido.</value>
+  </data>
+  <data name="WRONG_RESOLUTION_INFO">
+    <value>'{0}' no es información válida para la resolución '{1}'.</value>
+  </data>
+  <data name="WRONG_RESOLUTION_OPTION">
+    <value>'{0}' no es una resolución válida.</value>
+  </data>
+  <data name="XLINK_CSET_NOT_FOUND">
+    <value>No se ha podido encontrar el changeset del xlink {0}</value>
+  </data>
+</root>
