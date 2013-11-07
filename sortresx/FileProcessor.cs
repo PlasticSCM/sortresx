@@ -1,7 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml;
-using System.Collections;
 
 namespace Codice.SortResX
 {
@@ -10,8 +10,8 @@ namespace Codice.SortResX
         public FileProcessor(string path)
         {
             mPath = path;
-            mResourceNameList = new ArrayList();
-            mResourceNodes = new Hashtable();
+            mResourceNameList = new List<string>();
+            mResourceNodes = new Dictionary<string, XmlNode>();
             mDoc = new XmlDocument();
             try
             {
@@ -30,7 +30,18 @@ namespace Codice.SortResX
 
             try
             {
-                ExtractResources();
+                var xpathQuery = new Dictionary<string, string>();
+                xpathQuery.Add(".resx", "data/@name");
+                xpathQuery.Add(".dbml", "*[local-name() != 'ConnectionString']/@Name");
+
+                string query = null;
+                if (!xpathQuery.TryGetValue(Path.GetExtension(mPath).ToLowerInvariant(), out query))
+                {
+                    Console.WriteLine("Error when processing the file. Unsupported file extension: " + Path.GetExtension(mPath));
+                    return;
+                }
+
+                ExtractResources(query);
                 sortedNames = SortResourceList();
                 WriteOrderedResources(sortedNames);
             }
@@ -41,32 +52,13 @@ namespace Codice.SortResX
             }
         }
 
-        void ExtractResources()
+        void ExtractResources(string query)
         {
-            XmlNodeList rootList = mDoc.GetElementsByTagName("root");
-            foreach (XmlNode rootNode in rootList)
+            foreach (XmlAttribute attribute in mDoc.DocumentElement.SelectNodes(query))
             {
-                foreach (XmlNode node in rootNode.ChildNodes)
-                {
-                    if (!node.Name.EndsWith("data"))
-                    {
-                        continue;
-                    }
-
-                    foreach (XmlAttribute attr in node.Attributes)
-                    {
-                        if (attr.Name.EndsWith("name"))
-                        {
-                            AddXmlNode(node, attr);
-                        }
-                    }
-                }
-
-                XmlNodeList deleteList = rootNode.SelectNodes("/root/data");
-                foreach(XmlNode delNode in deleteList)
-                {
-                    rootNode.RemoveChild(delNode);
-                }
+                var element = attribute.OwnerElement;
+                AddXmlNode(element, attribute);
+                element.ParentNode.RemoveChild(element);
             }
         }
 
@@ -84,7 +76,7 @@ namespace Codice.SortResX
             string[] names = new string[mResourceNameList.Count];
 
             for (int i = 0; i < mResourceNameList.Count; i++)
-                names[i] = (string)mResourceNameList[i];
+                names[i] = mResourceNameList[i];
 
             Array.Sort(names);
             return names;
@@ -92,19 +84,16 @@ namespace Codice.SortResX
 
         void WriteOrderedResources(string[] names)
         {
-            XmlNodeList rootList = mDoc.GetElementsByTagName("root");
-            foreach (XmlNode rootNode in rootList)
+            foreach (string key in names)
             {
-                foreach (string key in names)
-                {
-                    rootNode.AppendChild((XmlNode)mResourceNodes[key]);
-                }
+                mDoc.DocumentElement.AppendChild(mResourceNodes[key]);
             }
+
             mDoc.Save(mPath);
         }
 
-        private ArrayList mResourceNameList = null;
-        private Hashtable mResourceNodes = null;
+        private List<string> mResourceNameList = null;
+        private Dictionary<string, XmlNode> mResourceNodes = null;
         private XmlDocument mDoc = null;
         private string mPath = null;
     }
