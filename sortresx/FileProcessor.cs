@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml;
 
 namespace Codice.SortResX
@@ -26,8 +27,6 @@ namespace Codice.SortResX
 
         public void Process()
         {
-            string[] sortedNames;
-
             try
             {
                 var xpathQuery = new Dictionary<string, string>();
@@ -42,8 +41,17 @@ namespace Codice.SortResX
                 }
 
                 ExtractResources(query);
-                sortedNames = SortResourceList();
-                WriteOrderedResources(sortedNames);
+
+	            var shouldSaveSort = TrySortResourceList(out var sortedNames);
+                if (shouldSaveSort)
+                {
+                    WriteOrderedResources(sortedNames);
+                    Console.WriteLine("Resx file '{0}' sorted successfully.", _mPath);
+                }
+                else
+                {
+                    Console.WriteLine("Resx file '{0}' is already sorted. Nothing to do.", _mPath);
+                }
             }
             catch (Exception ex)
             {
@@ -71,15 +79,16 @@ namespace Codice.SortResX
             mResourceNameList.Add(attribute.Value);
         }
 
-        string[] SortResourceList()
+        bool TrySortResourceList(out string[]sortedNames)
         {
             string[] names = new string[mResourceNameList.Count];
 
             for (int i = 0; i < mResourceNameList.Count; i++)
                 names[i] = mResourceNameList[i];
 
-            Array.Sort(names);
-            return names;
+	        sortedNames = names.OrderBy(s => s).ToArray();
+
+	        return !sortedNames.SequenceEqual(names);
         }
 
         void WriteOrderedResources(string[] names)
