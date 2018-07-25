@@ -20,7 +20,7 @@ namespace Codice.SortResX
             catch (XmlException ex)
             {
                 Console.WriteLine("The XML file is not correct. Message: " + ex.Message);
-                throw ex;
+                throw;
             }
         }
 
@@ -48,7 +48,7 @@ namespace Codice.SortResX
             catch (Exception ex)
             {
                 Console.WriteLine("Error when processing the file. Message: " + ex.Message);
-                throw ex;
+                throw;
             }
         }
 
@@ -64,11 +64,11 @@ namespace Codice.SortResX
 
         void AddXmlNode(XmlNode node, XmlAttribute attribute)
         {
-            if (mResourceNodes.ContainsKey(attribute.Value.ToString()))
+            if (mResourceNodes.ContainsKey(attribute.Value))
                 return;
 
-            mResourceNodes.Add(attribute.Value.ToString(), node);
-            mResourceNameList.Add(attribute.Value.ToString());
+            mResourceNodes.Add(attribute.Value, node);
+            mResourceNameList.Add(attribute.Value);
         }
 
         string[] SortResourceList()
