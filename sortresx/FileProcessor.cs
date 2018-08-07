@@ -8,15 +8,26 @@ namespace Codice.SortResX
 {
     public class FileProcessor
     {
+        private readonly List<string> _mResourceNameList;
+        private readonly Dictionary<string, XmlNode> _mResourceNodes;
+        private readonly XmlDocument _mDoc;
+        private readonly string _mPath;
+
+        private readonly Dictionary<string, string> _xpathQuery = new Dictionary<string, string>
+        {
+            {".resx", "data/@name"},
+            {".dbml", "*[local-name() != 'ConnectionString']/@Name"}
+        };
+
         public FileProcessor(string path)
         {
-            mPath = path;
-            mResourceNameList = new List<string>();
-            mResourceNodes = new Dictionary<string, XmlNode>();
-            mDoc = new XmlDocument();
+            _mPath = path;
+            _mResourceNameList = new List<string>();
+            _mResourceNodes = new Dictionary<string, XmlNode>();
+            _mDoc = new XmlDocument();
             try
             {
-                mDoc.Load(mPath);
+                _mDoc.Load(_mPath);
             }
             catch (XmlException ex)
             {
@@ -29,14 +40,9 @@ namespace Codice.SortResX
         {
             try
             {
-                var xpathQuery = new Dictionary<string, string>();
-                xpathQuery.Add(".resx", "data/@name");
-                xpathQuery.Add(".dbml", "*[local-name() != 'ConnectionString']/@Name");
-
-                string query = null;
-                if (!xpathQuery.TryGetValue(Path.GetExtension(mPath).ToLowerInvariant(), out query))
+                if (!_xpathQuery.TryGetValue(Path.GetExtension(_mPath).ToLowerInvariant(), out var query))
                 {
-                    Console.WriteLine("Error when processing the file. Unsupported file extension: " + Path.GetExtension(mPath));
+                    Console.WriteLine("Error when processing the file. Unsupported file extension: " + Path.GetExtension(_mPath));
                     return;
                 }
 
@@ -62,7 +68,7 @@ namespace Codice.SortResX
 
         void ExtractResources(string query)
         {
-            foreach (XmlAttribute attribute in mDoc.DocumentElement.SelectNodes(query))
+            foreach (XmlAttribute attribute in _mDoc.DocumentElement.SelectNodes(query))
             {
                 var element = attribute.OwnerElement;
                 AddXmlNode(element, attribute);
@@ -72,19 +78,19 @@ namespace Codice.SortResX
 
         void AddXmlNode(XmlNode node, XmlAttribute attribute)
         {
-            if (mResourceNodes.ContainsKey(attribute.Value))
+            if (_mResourceNodes.ContainsKey(attribute.Value))
                 return;
 
-            mResourceNodes.Add(attribute.Value, node);
-            mResourceNameList.Add(attribute.Value);
+            _mResourceNodes.Add(attribute.Value, node);
+            _mResourceNameList.Add(attribute.Value);
         }
 
         bool TrySortResourceList(out string[]sortedNames)
         {
-            string[] names = new string[mResourceNameList.Count];
+            string[] names = new string[_mResourceNameList.Count];
 
-            for (int i = 0; i < mResourceNameList.Count; i++)
-                names[i] = mResourceNameList[i];
+            for (int i = 0; i < _mResourceNameList.Count; i++)
+                names[i] = _mResourceNameList[i];
 
 	        sortedNames = names.OrderBy(s => s).ToArray();
 
@@ -95,15 +101,10 @@ namespace Codice.SortResX
         {
             foreach (string key in names)
             {
-                mDoc.DocumentElement.AppendChild(mResourceNodes[key]);
+                _mDoc.DocumentElement.AppendChild(_mResourceNodes[key]);
             }
 
-            mDoc.Save(mPath);
+            _mDoc.Save(_mPath);
         }
-
-        private List<string> mResourceNameList = null;
-        private Dictionary<string, XmlNode> mResourceNodes = null;
-        private XmlDocument mDoc = null;
-        private string mPath = null;
     }
 }
