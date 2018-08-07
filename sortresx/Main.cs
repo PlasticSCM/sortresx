@@ -8,24 +8,31 @@ namespace Codice.SortResX
         [STAThread]
         static int Main(string[] args)
         {
-                ResourceFileSorter fileSorter = null;
-                if (args.Length <= 0)
-                    return 1;
+            if (args.Length <= 0)
+            {
+                PrintUsage("<none>");
+                return 1;
+            }
 
-                if (!CheckArgs(args[0]))
-                    return 1;
+            var filepath = args[0];
+            if (!CheckArgs(filepath))
+            {
+                Console.WriteLine("The file specified '{0}' doesn't exist!", filepath);
+                return 1;
+            }
 
-                try
-                {
-                    fileSorter = new ResourceFileSorter(args[0]);
-                    fileSorter.Sort();
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("================================");
-                    Console.WriteLine("Could not sort resources. Abort.");
-                }
-                return 0;
+            try
+            {
+                new ResourceFileSorter(filepath).Sort();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("================================");
+                Console.WriteLine("Could not sort resources. Abort.");
+                return 2;
+            }
+
+			return 0;
         }
 
         static void PrintUsage(string argument)
@@ -43,17 +50,14 @@ namespace Codice.SortResX
     {
         public ResourceFileSorter(string path)
         {
-            mFileProcessor = new FileProcessor(path);
+            _mFileProcessor = new FileProcessor(path);
         }
 
         public void Sort()
         {
-            if (mFileProcessor != null)
-            {
-                mFileProcessor.Process();
-            }
+            _mFileProcessor?.Process();
         }
 
-        private FileProcessor mFileProcessor;
+        private readonly FileProcessor _mFileProcessor;
     }
 }
