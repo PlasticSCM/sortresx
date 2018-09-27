@@ -36,14 +36,14 @@ namespace Codice.SortResX
             }
         }
 
-        public void Process()
+        public bool Process()
         {
             try
             {
                 if (!_xpathQuery.TryGetValue(Path.GetExtension(_mPath).ToLowerInvariant(), out var query))
                 {
                     Console.WriteLine("Error when processing the file. Unsupported file extension: " + Path.GetExtension(_mPath));
-                    return;
+                    return false;
                 }
 
                 ExtractResources(query);
@@ -53,11 +53,11 @@ namespace Codice.SortResX
                 {
                     WriteOrderedResources(sortedNames);
                     Console.WriteLine("Resx file '{0}' sorted successfully.", _mPath);
+                    return true;
                 }
-                else
-                {
-                    Console.WriteLine("Resx file '{0}' is already sorted. Nothing to do.", _mPath);
-                }
+
+                Console.WriteLine("Resx file '{0}' is already sorted. Nothing to do.", _mPath);
+                return false;
             }
             catch (Exception ex)
             {
