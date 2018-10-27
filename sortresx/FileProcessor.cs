@@ -1,60 +1,74 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml;
 
 namespace Codice.SortResX
 {
     public class FileProcessor
     {
+        private readonly List<string> _mResourceNameList;
+        private readonly Dictionary<string, XmlNode> _mResourceNodes;
+        private readonly XmlDocument _mDoc;
+        private readonly string _mPath;
+
+        private readonly Dictionary<string, string> _xpathQuery = new Dictionary<string, string>
+        {
+            {".resx", "data/@name"},
+            {".dbml", "*[local-name() != 'ConnectionString']/@Name"}
+        };
+
         public FileProcessor(string path)
         {
-            mPath = path;
-            mResourceNameList = new List<string>();
-            mResourceNodes = new Dictionary<string, XmlNode>();
-            mDoc = new XmlDocument();
+            _mPath = path;
+            _mResourceNameList = new List<string>();
+            _mResourceNodes = new Dictionary<string, XmlNode>();
+            _mDoc = new XmlDocument();
             try
             {
-                mDoc.Load(mPath);
+                _mDoc.Load(_mPath);
             }
             catch (XmlException ex)
             {
                 Console.WriteLine("The XML file is not correct. Message: " + ex.Message);
-                throw ex;
+                throw;
             }
         }
 
-        public void Process()
+        public bool Process()
         {
-            string[] sortedNames;
-
             try
             {
-                var xpathQuery = new Dictionary<string, string>();
-                xpathQuery.Add(".resx", "data/@name");
-                xpathQuery.Add(".dbml", "*[local-name() != 'ConnectionString']/@Name");
-
-                string query = null;
-                if (!xpathQuery.TryGetValue(Path.GetExtension(mPath).ToLowerInvariant(), out query))
+                if (!_xpathQuery.TryGetValue(Path.GetExtension(_mPath).ToLowerInvariant(), out var query))
                 {
-                    Console.WriteLine("Error when processing the file. Unsupported file extension: " + Path.GetExtension(mPath));
-                    return;
+                    Console.WriteLine("Error when processing the file. Unsupported file extension: " + Path.GetExtension(_mPath));
+                    return false;
                 }
 
                 ExtractResources(query);
-                sortedNames = SortResourceList();
-                WriteOrderedResources(sortedNames);
+
+	            var shouldSaveSort = TrySortResourceList(out var sortedNames);
+                if (shouldSaveSort)
+                {
+                    WriteOrderedResources(sortedNames);
+                    Console.WriteLine("Resx file '{0}' sorted successfully.", _mPath);
+                    return true;
+                }
+
+                Console.WriteLine("Resx file '{0}' is already sorted. Nothing to do.", _mPath);
+                return false;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error when processing the file. Message: " + ex.Message);
-                throw ex;
+                throw;
             }
         }
 
         void ExtractResources(string query)
         {
-            foreach (XmlAttribute attribute in mDoc.DocumentElement.SelectNodes(query))
+            foreach (XmlAttribute attribute in _mDoc.DocumentElement.SelectNodes(query))
             {
                 var element = attribute.OwnerElement;
                 AddXmlNode(element, attribute);
@@ -64,37 +78,33 @@ namespace Codice.SortResX
 
         void AddXmlNode(XmlNode node, XmlAttribute attribute)
         {
-            if (mResourceNodes.ContainsKey(attribute.Value.ToString()))
+            if (_mResourceNodes.ContainsKey(attribute.Value))
                 return;
 
-            mResourceNodes.Add(attribute.Value.ToString(), node);
-            mResourceNameList.Add(attribute.Value.ToString());
+            _mResourceNodes.Add(attribute.Value, node);
+            _mResourceNameList.Add(attribute.Value);
         }
 
-        string[] SortResourceList()
+        bool TrySortResourceList(out string[]sortedNames)
         {
-            string[] names = new string[mResourceNameList.Count];
+            string[] names = new string[_mResourceNameList.Count];
 
-            for (int i = 0; i < mResourceNameList.Count; i++)
-                names[i] = mResourceNameList[i];
+            for (int i = 0; i < _mResourceNameList.Count; i++)
+                names[i] = _mResourceNameList[i];
 
-            Array.Sort(names);
-            return names;
+	        sortedNames = names.OrderBy(s => s).ToArray();
+
+	        return !sortedNames.SequenceEqual(names);
         }
 
         void WriteOrderedResources(string[] names)
         {
             foreach (string key in names)
             {
-                mDoc.DocumentElement.AppendChild(mResourceNodes[key]);
+                _mDoc.DocumentElement.AppendChild(_mResourceNodes[key]);
             }
 
-            mDoc.Save(mPath);
+            _mDoc.Save(_mPath);
         }
-
-        private List<string> mResourceNameList = null;
-        private Dictionary<string, XmlNode> mResourceNodes = null;
-        private XmlDocument mDoc = null;
-        private string mPath = null;
     }
 }
